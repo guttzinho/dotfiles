@@ -22,11 +22,12 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"""Plug 'vim-airline/vim-airline'
+"""Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -98,9 +99,14 @@ nnoremap <silent> <C-z> :ToggleTerminal<Enter>
 tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 
 "airline""""""
-let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#formatter = "unique_tail_improved"
-let g:airline_powerline_fonts = 5
+
+let g:lightline = {
+			\ 'colorscheme': 'catppuccin',
+      \ }
+
+"let g:airline#extensions#tabline#enabled = 2
+"let g:airline#extensions#tabline#formatter = "unique_tail_improved
+"let g:airline_powerline_fonts = 5
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -161,8 +167,4 @@ let g:compe.source.vsnip = v:true
 let g:compe.source.ultisnips = v:true
 let g:compe.source.luasnip = v:true
 let g:compe.source.emoji = v:true
-
-"backgound color :)
-"set termeguicolors
-highlight Normal guibg=#1E1E29
 
