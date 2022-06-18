@@ -21,20 +21,17 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-"""Plug 'vim-airline/vim-airline'
-"""Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
 
 "global sets""""""
 syntax on
 
-set nu
 set cursorline
 set signcolumn=yes
 set hidden
@@ -67,9 +64,6 @@ highlight link CompeDocumentation NormalFloat
 "screenshot"""""
 let g:shoot_save_path = "screenshots"
 
-"theme""""""
-colorscheme catppuccin
-
 "file manager"""""
 nmap <C-a> :NERDTreeToggle<CR>
 
@@ -98,11 +92,14 @@ nnoremap <silent> <A-j> :m +1 <CR>
 nnoremap <silent> <C-z> :ToggleTerminal<Enter>
 tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 
-"airline""""""
+"theme""""""
+let g:tokyonight_style = "night"
+let g:tokyonight_transparent = "true"
+colorscheme tokyonight
 
-let g:lightline = {
-			\ 'colorscheme': 'catppuccin',
-      \ }
+"airline""""""
+" Vim Script
+let g:lightline = {'colorscheme': 'tokyonight'}
 
 "let g:airline#extensions#tabline#enabled = 2
 "let g:airline#extensions#tabline#formatter = "unique_tail_improved
